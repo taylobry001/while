@@ -12,23 +12,25 @@ Combo = RC + RC2
 password = Combo
 attempts = 0  
 
-
+#Debug
 print(f"(Hint) Password is: {password}")
 print(f"(DEBUG) Attempts: {attempts}")
 
-
+#checking if attempts is greater than 3
 while attempts < 3:
     user_input = input("Enter your password here: ")
 
+#if the user input is the same as password print Access Granted
     if user_input == password:
         time.sleep(0.2)
         print("Access Granted ✅")
         break
     else:
+# If its incorrect print try again and add +1 attempt
         time.sleep(0.2)
-        print("Incorrect! Try again.")
+        print("Try again.")
         attempts += 1
 
-
+#if player has no more attempts and they get it wrong print denied
 if attempts == 3 and user_input != password:
     print("Access Denied 🚫")
